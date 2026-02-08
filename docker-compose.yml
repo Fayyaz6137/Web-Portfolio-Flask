@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  flask-portfolio:
+    build: .
+    container_name: flask_portfolio
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=development
